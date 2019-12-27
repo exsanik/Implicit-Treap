@@ -221,7 +221,8 @@ function startQuery() {
 
   saveSlideHtml();
   playSlide();
-  document.getElementById("labelQuery").innerText += " " + res;
+  document.getElementById("labelQuery").innerText =
+    document.getElementById("labelQuery").innerText + " " + res;
   document.getElementById("step-desc").innerText = "Query step";
   document.getElementById("dropdownMenuButton4").innerText = "Left";
   document.getElementById("dropdownMenuButton5").innerText = "Right";
