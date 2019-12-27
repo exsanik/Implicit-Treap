@@ -1,0 +1,236 @@
+body {
+  background: #b993d6;
+  background: -webkit-linear-gradient(to right, #8ca6db, #b993d6);
+  background: linear-gradient(to right, #8ca6db, #b993d6);
+}
+
+.nodeBlock {
+  border: 2px solid;
+  width: 150px;
+  height: 110px;
+  background: #ec6f66; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f3a183,
+    #ec6f66
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f3a183,
+    #ec6f66
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.newEl {
+  background: #eb3349; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f45c43,
+    #eb3349
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f45c43,
+    #eb3349
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.value {
+  position: absolute;
+  color: white;
+  top: 7px;
+  border: 2px solid black;
+  left: 6%;
+  display: block;
+  width: 90px;
+  border-radius: 5px;
+  height: 30px;
+  background-color: rgb(86, 172, 172);
+}
+
+.priority {
+  position: absolute;
+  color: white;
+  bottom: 8%;
+  border: 2px solid black;
+  border-radius: 5px;
+  left: 6%;
+  display: block;
+  width: 65px;
+  height: 30px;
+  background-color: rgb(86, 172, 172);
+}
+
+.size {
+  position: absolute;
+  color: white;
+  bottom: 8%;
+  right: 6%;
+  border-radius: 5px;
+  border: 2px solid black;
+  display: block;
+  width: 55px;
+  height: 30px;
+  background-color: rgb(86, 172, 172);
+}
+
+.reverse {
+  position: absolute;
+  color: white;
+  border: 2px solid black;
+  top: 4%;
+  right: -11.5%;
+  border-radius: 20px;
+  display: block;
+  width: 60px;
+  height: 28px;
+  background-color: rgb(86, 172, 172);
+}
+
+.sum {
+  position: absolute;
+  color: white;
+  border: 2px solid black;
+  border-top: none;
+  top: 29%;
+  right: -11.5%;
+  border-radius: 20px;
+  display: block;
+  width: 60px;
+  height: 28px;
+  background-color: rgb(86, 172, 172);
+}
+
+.chart {
+  width: 80%;
+}
+
+.controls {
+  width: 20%;
+  display: none;
+}
+
+label {
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+.form-group {
+  background-color: rgb(245, 245, 245);
+  padding: 20px;
+  margin: 20px;
+  width: 95%;
+  border: 3px solid;
+  border-radius: 15px;
+}
+
+.btn {
+  margin-bottom: 1rem;
+}
+
+.lr-inp {
+  margin-right: 5px;
+}
+
+.move-controls {
+  position: fixed;
+  bottom: 0;
+  left: 5px;
+}
+
+.move-controls button {
+  margin-right: 5px;
+  width: 100px;
+}
+
+#step-desc {
+  font-size: 1.1rem;
+  margin: 10px;
+  color: #555;
+  position: absolute;
+}
+
+.dropdown button {
+  background-color: #8fa4da;
+  margin-top: 5px;
+  margin-right: 20px;
+  margin-bottom: 7px;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  min-width: 5rem;
+}
+
+.dropdown-item:hover {
+  background-color: #8fa4da;
+}
+
+#startBlock {
+  width: 40%;
+  padding: 2%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+  left: 32%;
+  margin-top: 12%;
+  border-radius: 20px;
+  border: 2px solid;
+}
+
+#startBlock button {
+  width: 200px;
+  border: 2px solid;
+  height: 60px;
+  margin: 5%;
+  border-radius: 30px;
+  font-size: 1.3rem;
+}
+
+#startBlock h1 {
+  margin-top: 20px;
+}
+
+#startBlock .plus-minus {
+  width: 70px;
+  height: 35px;
+  border-radius: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#startBlock .plus-minus i {
+  display: block;
+}
+
+.counter-block {
+  margin-bottom: 15px;
+}
+
+.counter-block span {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.btn-info,
+.btn-danger,
+#add-inp,
+#dropdownMenuButton {
+  width: 240px;
+}
+
+#dropdownMenuButton0 {
+  margin: 0;
+  margin-left: 5px;
+}
+
+.inputAdd {
+  margin-bottom: 7px;
+}

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./treant/Treant.css" />
+    <link rel="icon" href="./favicon.ico" />
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+      integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./index.css" />
+
+    <title>Implicit Treap</title>
+  </head>
+  <body>
+    <div id="step-desc"></div>
+    <div class="container-fluid d-flex">
+      <div id="startBlock" class="d-flex justify-content-around flex-column">
+        <h1 class="struct-title">Implicit Treap</h1>
+        <button
+          type="button"
+          class="btn btn-outline-dark mx-auto"
+          onclick="startBuild()"
+        >
+          <i class="fas fa-play"></i>
+        </button>
+
+        <label>Initial number of elements:</label>
+        <div class="counter-block">
+          <button
+            class="plus-minus btn btn-outline-dark"
+            onclick="counterMinus()"
+          >
+            <i class="fas fa-minus"></i>
+          </button>
+          <span id="arrCounter">5</span>
+          <button
+            class="plus-minus btn btn-outline-dark"
+            onclick="counterPlus()"
+          >
+            <i class="fas fa-plus"></i>
+          </button>
+        </div>
+      </div>
+      <div class="d-flex justify-content-around chart" id="rootContainer"></div>
+      <div class="controls">
+        <div class="form-group">
+          <label for="add-inp">Add Node:</label>
+          <div class="d-flex inputAdd">
+            <input
+              class="form-control"
+              type="number"
+              min="-999999"
+              max="999999"
+              id="add-inp"
+              placeholder="Value"
+            />
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton0"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Pos
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
+            </div>
+          </div>
+          <button class="btn btn-info" onclick="startAdd()">Add</button>
+          <br />
+          <label for="rm-inp">Remove Node:</label>
+          <div class="dropdown">
+            <button
+              class="btn btn-secondary dropdown-toggle"
+              type="button"
+              id="dropdownMenuButton"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Choose node
+            </button>
+            <div
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+            ></div>
+          </div>
+          <button class="btn btn-danger" onclick="startRemove()">Remove</button>
+          <br />
+          <label>To front query:</label>
+          <div class="d-flex">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton2"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Left
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton3"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Right
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
+            </div>
+          </div>
+          <button class="btn btn-info" onclick="startToFront()">
+            To front
+          </button>
+          <br />
+          <label id="labelQuery">Sum query:</label>
+          <div class="d-flex">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton4"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Left
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton5"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Right
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
+            </div>
+          </div>
+          <button class="btn btn-info" onclick="startQuery()">Get query</button>
+          <br />
+          <label>Reverse query:</label>
+          <div class="d-flex">
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton6"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Left
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
+            </div>
+            <div class="dropdown">
+              <button
+                class="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton7"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Right
+              </button>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="dropdownMenuButton"
+              ></div>
+            </div>
+          </div>
+          <button class="btn btn-info" onclick="startReverse()">Reverse</button>
+        </div>
+      </div>
+    </div>
+    <div class="move-controls d-flex">
+      <button class="btn btn-outline-dark" onclick="stepBack()">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <button class="btn btn-outline-dark" onclick="playPause()">
+        <i class="fas fa-step-forward"></i>
+      </button>
+      <button class="btn btn-outline-dark" onclick="stepForward()">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./treant/vendor/raphael.js"></script>
+  <script src="./treant/Treant.js"></script>
+  <script src="./ImplicitTreap.js"></script>
+  <script src="index.js"></script>
+</html>
